@@ -16,3 +16,8 @@ df['hour'] = df['Start Time'].dt.hour
 popular_hour = df['hour'].mode()[0]
     
 print('Most Frequent Start Hour:', popular_hour)
+
+# print value counts for each user type
+user_types = pd.Series( data = df[ 'User Type' ]  ).value_counts()
+
+print(user_types)
