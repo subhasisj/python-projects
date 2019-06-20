@@ -1,23 +1,11 @@
+import numpy as np
 import pandas as pd
+import bikeshare_utility_functions as utility
 
-df = pd.read_csv('chicago.csv')
-print(df.head())  # start by viewing the first few rows of the dataset!
-df.columns
-df.describe()
-df.info()
+city , month , day  = utility.filter_data()
 
-# convert the Start Time column to datetime
-df['Start Time'] = pd.to_datetime(df[ 'Start Time' ])
+print(city , month , day)
 
-# extract hour from the Start Time column to create an hour column
-df['hour'] = df['Start Time'].dt.hour
 
-# find the most common hour (from 0 to 23)
-popular_hour = df['hour'].mode()[0]
-    
-print('Most Frequent Start Hour:', popular_hour)
 
-# print value counts for each user type
-user_types = pd.Series( data = df[ 'User Type' ]  ).value_counts()
 
-print(user_types)
