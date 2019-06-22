@@ -1,5 +1,6 @@
 import pandas as pd
 import time
+import json
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -133,3 +134,58 @@ def travel_time_stats( df ):
     end_time = time.time() - start_time 
     print('\nCalculated in {} seconds'.format(end_time))
     print( '\n' + '-'*100)
+
+
+def calc_user_statistics( df ):
+
+    print('\nCalculating User Stats...')
+    print('\nTotal users per user type : ')
+    start_time = time.time()
+    
+    usertype_counts = df['User Type'].value_counts()
+    enumerate_and_print(usertype_counts)
+    
+    if 'Gender' in df:
+        print('\nCounts of gender:')
+        gender_counts = df['Gender'].value_counts()
+        enumerate_and_print(gender_counts)
+
+    if 'Birth Year' in df:
+        birth_stats(df) 
+
+    end_time = time.time() - start_time 
+    print('\nCalculated in {} seconds'.format(end_time))
+    print( '\n' + '-'*100)
+
+def birth_stats(df):
+    print('The most common birth year: {}'.format(df['Birth Year'].mode()[0]))
+    print('The most recent birth year: {}'.format(df['Birth Year'].max() ) )
+    print('The most earliest birth year: {}'.format(df['Birth Year'].min() ) ) 
+
+def enumerate_and_print(iterable_object):
+    for index , element in enumerate(iterable_object):
+        print( '    {} : {}'.format(iterable_object.index[index] , element )  )
+
+
+def dataset_stats(df , city):
+    print('\nCalculating Dataset Stats...')     
+    print('The number of missing values in the {} dataset:{}'.format(city , df.isnull().sum().sum()))
+    print('The columns have \'NaN\' values are :{}'.format( df.columns[ df.isnull().any() ].tolist() ))
+    if 'Birth Year' in df:
+        print('The number of missing values in the \'Birth Year\' column:{}'.format(df['Birth Year'].isnull().sum()))
+
+def display_data_in_json_format(df):
+    '''Display Bikeshare data in JSON'''
+
+    for i in range(0 , df.shape[0] , 5):
+        answer = input('\nWould like to see trip details ? Type \'yes\' or \'no : \n').lower()
+        if answer != 'yes':
+            break
+        
+        # Convert row data to JSON
+        rows_in_json = df.iloc[ i:i+5 ].to_json(orient='records', lines=True).split('\n')
+        
+        for row in rows_in_json :
+            #json.load method converts JSON string to Python Object
+            parsed = json.loads(row)
+            print(json.dumps(parsed, indent=2, sort_keys=True) )
