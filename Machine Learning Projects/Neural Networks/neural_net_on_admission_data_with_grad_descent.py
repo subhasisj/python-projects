@@ -71,3 +71,15 @@ tes_out = sigmoid(np.dot(features_test, weights))
 predictions = tes_out > 0.5
 accuracy = np.mean(predictions == targets_test)
 print("Prediction accuracy: {:.3f}".format(accuracy))
+
+""" Train loss:  0.26276093849966364
+Train loss:  0.20928619409324895
+Train loss:  0.20084292908073417
+Train loss:  0.1986215647552789
+Train loss:  0.19779851396686018
+Train loss:  0.19742577912189863
+Train loss:  0.19723507746241065
+Train loss:  0.19712945625092465
+Train loss:  0.19706766341315077
+Train loss:  0.19703005801777368
+Prediction accuracy: 0.725 """
