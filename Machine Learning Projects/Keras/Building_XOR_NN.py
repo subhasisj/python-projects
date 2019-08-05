@@ -43,3 +43,13 @@ print("\nAccuracy: ", score[-1])
 # # Checking the predictions
 print("\nPredictions:")
 print(xor.predict_proba(X))
+
+"""
+Accuracy:  1.0
+
+Predictions:
+[[0.8599172  0.16491759]
+ [0.30646425 0.5681351 ]
+ [0.18805876 0.75621223]
+ [0.7179891  0.40460438]]
+"""
