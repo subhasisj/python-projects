@@ -10,3 +10,7 @@ Machine Learning Projects/Recommender System/Data/movielens/movies.csv
 Machine Learning Projects/Recommender System/Data/movielens/ratings.csv
 Machine Learning Projects/Recommender System/Data/movielens/README.txt
 Machine Learning Projects/Recommender System/Data/movielens/tags.csv
+.gitignore
+test.png
+.vscode
+__pycache__
