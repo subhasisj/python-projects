@@ -98,3 +98,6 @@ Machine_Learning_Projects/Automate_User_Creation_DI/credentials.py
 Machine_Learning_Projects/Breast Cancer Detection using Deep Learning/.ipynb_checkpoints/build_dataset-checkpoint.py
 Machine_Learning_Projects/Breast Cancer Detection using Deep Learning/.ipynb_checkpoints/project_configuration-checkpoint.py
 Machine_Learning_Projects/Automate_User_Creation_DI/.ipynb_checkpoints/credentials-checkpoint.py
+.gitignore
+Machine_Learning_Projects/COVID-19/Notebooks/secret_keys.py
+Machine_Learning_Projects/COVID-19/Notebooks/.ipynb_checkpoints/secret_keys-checkpoint.py
