@@ -1,0 +1,1 @@
+[('Hydroxychloroquine could have side-effects, suggests new study by ICMR', {'entities': [(0, 19, 'covid_treatment')]})]
