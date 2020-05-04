@@ -1,0 +1,8 @@
+04-May-20 23:11:51 WARNING hi testing logger2
+04-May-20 23:12:08 CRITICAL hi testing logger2
+04-May-20 23:12:42 CRITICAL hi testing logger2
+04-May-20 23:13:02 WARNING hi testing logger3
+04-May-20 23:15:44 INFO hi testing logger_info
+05-May-20 01:43:36 INFO hi testing logger_info
+05-May-20 01:43:52 INFO hi testing logger_info
+05-May-20 01:43:52 INFO This is for a test

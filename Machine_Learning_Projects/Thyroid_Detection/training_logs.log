@@ -1,0 +1,4 @@
+05-May-20 02:41:19 INFO logging from Class Training
+05-May-20 02:41:19 INFO Starting training files validation
+05-May-20 02:41:19 INFO Loading Schema from .\data\schema\schema_training.json
+05-May-20 02:41:19 INFO Validating file names for 29 files
