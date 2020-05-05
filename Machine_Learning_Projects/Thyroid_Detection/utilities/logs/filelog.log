@@ -1,0 +1,5 @@
+06-May-20 02:02:18 INFO New Path Created .\utilities\test_dir
+06-May-20 02:18:28 INFO File abc.txt successfully moved from .\utilities\test_dir\abc.txt to .\utilities\test_dir2\abc.txt
+06-May-20 02:26:06 INFO File path .\utilities\test_dir\test_dir2 successfully removed
+06-May-20 02:27:42 INFO File path .\utilities\test_dir2 successfully removed
+06-May-20 02:41:33 WARNING Requested Path .\utilities\test_dir2 does not exist!

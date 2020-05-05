@@ -3,6 +3,6 @@ import streamlit as st
 
 def file_selector(folder_path='./data/',text='Select file path'):
     folders = [folder for folder in os.listdir(folder_path) ]
-    selected_folder = st.selectbox(text, folders)
+    selected_folder = st.selectbox(text, sorted(folders,reverse=True))
     return f'{os.path.join(folder_path, selected_folder)}'
 

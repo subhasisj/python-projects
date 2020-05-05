@@ -16,6 +16,8 @@ import plotly.graph_objects as go
 def explore_data(path):
 
     df = load_data(path)
+    if st.checkbox('Show Data'):
+        st.dataframe(df.head(10))
     df_copy = df.copy()
     df_copy = analyze_and_clean(df_copy)
 
