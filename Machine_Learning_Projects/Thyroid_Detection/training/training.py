@@ -28,17 +28,17 @@ class Training:
 
     def start_training(self):
         
-        bar = st.progress(0)
-        
+        # bar = st.progress(0)
+        with st.spinner('Validating files now, please wait.....'):
         # Validation
-        validation_result = self._run_validation()
+            validation_result = self._run_validation()
 
         # Move files to good/bad folders after validation
 
 
 
 
-        bar.progress(100)
+        # bar.progress(100)
 
 
 
