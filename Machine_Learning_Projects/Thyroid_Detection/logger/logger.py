@@ -6,7 +6,11 @@ class Logger:
         self._logfile = logfile
         for handler in logging.root.handlers[:]:
             logging.root.removeHandler(handler)
-        logging.basicConfig(filename=f'logs/{self._logfile}',
+
+        # logging.basicConfig(filename=f'logs/{self._logfile}',
+        # format='%(asctime)s %(levelname)s %(message)s',
+        # datefmt='%d-%b-%y %H:%M:%S',level=logging.DEBUG)
+        logging.basicConfig(handlers=[logging.FileHandler(f'logs/{self._logfile}', mode='w')],
         format='%(asctime)s %(levelname)s %(message)s',
         datefmt='%d-%b-%y %H:%M:%S',level=logging.DEBUG)
 

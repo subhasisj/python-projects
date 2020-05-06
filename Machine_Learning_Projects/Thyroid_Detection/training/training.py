@@ -2,14 +2,19 @@ import sys
 sys.path.append('../')
 from logger.logger import Logger
 from validation.validate import Validate
+from preprocessing.preprocessing import Preprocessor
 import streamlit as st
+import os
+import pandas as pd
+import dask.dataframe as dd
 
 class Training:
     def __init__(self,training_file_path,schema_path):
         self._training_file_path = training_file_path
         self._schema_path = schema_path
         self._logger = Logger('training_logs.log')
-        self
+        self._path_to_good_files = None
+        self._path_to_bad_files = None
     
     def _run_validation(self):
 
@@ -19,12 +24,21 @@ class Training:
         self._logger.log('Training Files Validaiton Completed.') #
         st.info('Validation Results:')
         st.write(validation_result)
-        st.info('Path to Good Files:')
-        st.write(path_to_good_files)
-        st.info('Path to Bad Files:')
-        st.write(path_to_bad_files)
+        st.subheader('Files moved to:')
+
+        self._path_to_good_files = path_to_good_files
+        self._path_to_bad_files = path_to_bad_files
+        st.info(f'Path to Good Files: "{self._path_to_good_files}"')
+        st.info(f'Path to Bad Files: "{self._path_to_bad_files}"')
 
         return validation_result
+
+    def _preprocess_data(self):
+        all_files = [file for file in os.listdir(self._path_to_good_files)]
+        data_to_clean = dd.read_csv(os.path.join(self._path_to_good_files,'*.csv'))
+        # st.write(data_to_clean.count().compute())
+        unnecessary_columns = ['TSH_measured','T3_measured','TT4_measured','T4U_measured','FTI_measured','TBG_measured','TBG','TSH']
+        st.write(Preprocessor(self._logger,unnecessary_columns).transform(data_to_clean.compute()))
 
     def start_training(self):
         
@@ -32,6 +46,11 @@ class Training:
         with st.spinner('Validating files now, please wait.....'):
         # Validation
             validation_result = self._run_validation()
+
+        # Read Data from all files in Good Folder and run preprocessing
+        with st.spinner('Preprocessing Data now, please wait....'):
+            self._preprocess_data()
+        # Save data to DB
 
         # Move files to good/bad folders after validation
 

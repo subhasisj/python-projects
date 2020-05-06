@@ -17,20 +17,21 @@ def main():
     st.sidebar.title('Classify Thryoid Type')
     st.sidebar.header("What to do ?")
 
-    app_mode = st.sidebar.selectbox("Choose the app mode",["Explore Data", "Train the model", "Inference"])
+    app_mode = st.sidebar.selectbox("Choose the app mode",["Explore Data", "Load and Validate Data","Train the model", "Inference"])
     if app_mode == "Explore Data":
         path = st.text_input('CSV file path',value = './data/combined/hypothyroid.csv')
         if path:
             explore_data(path)
             
-    elif app_mode == "Train the model":
-        st.header('Model Training')
+    elif app_mode == "Load and Validate Data":
+        st.header('Load and Validate Data')
         st.markdown('''
-        We will train the model using a batch of training files.
-        - The preprocessing steps will include
+        We will load the data using a batch of training files.
+        - The validation steps will include
             - Validating the data schema from JSON files
-            - Cleaning the data by handling missing Values
-            - Balancing unbalanced Classes 
+            - Preprocessing:
+                - Cleaning the data by handling missing Values
+                - Balancing unbalanced Classes 
         
         Please select the base folder that contains the Schema for Training Files and the path to the training files in order to continue.
         ''')
@@ -48,7 +49,7 @@ def main():
             st.write([file for file in os.listdir(training_file_path) if os.path.isfile(os.path.join(training_file_path, file))])
 
         # st.button('Start Training')
-        if st.button('Start Training'):
+        if st.button('Start Validation'):
             training = Training(training_file_path,training_schema_path)
             training.start_training()
         # readme_text.empty()
