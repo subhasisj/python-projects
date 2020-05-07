@@ -1,4 +1,5 @@
-from training.training import Training
+from training.training import Training 
+from validation.validation_controller import ValidationController
 import streamlit as st
 import pandas as pd
 from src.exploration import explore_data
@@ -48,12 +49,36 @@ def main():
             st.info('Files to train:')
             st.write([file for file in os.listdir(training_file_path) if os.path.isfile(os.path.join(training_file_path, file))])
 
-        # st.button('Start Training')
         if st.button('Start Validation'):
-            training = Training(training_file_path,training_schema_path)
-            training.start_training()
-        # readme_text.empty()
-        # st.code(get_file_content_as_string("app.py"))
+            validation_controller = ValidationController(training_file_path,training_schema_path)
+            validation_controller.start_validation()
+
+    elif app_mode == "Train the model":
+        st.header('Model Training')
+        st.markdown('''
+        We will now load the data from the stored database from the previous step.
+        The training steps will include   
+        - Clustering the data
+        - Model training on several algorithms and finding appropriate Model for each cluster
+        
+        Please select the base folder that contains the Schema for Training Files DB in order to continue.
+        ''')
+
+        db_folder_path = os.path.join('.','data','Training_Batch_Files','training_db')
+        db_file = file_selector(folder_path=db_folder_path,text = 'Select the Training DB')
+        st.write(f'You selected `%s`' %db_file)
+        
+        preprocessor_path = os.path.join('.','artifacts','preprocessing')
+        saved_preprocessor = file_selector(folder_path=preprocessor_path,text = 'Select the saved Preprocessor')
+        st.write(f'You selected `%s`' %saved_preprocessor)
+
+        if st.button('Begin Training'):
+            training = Training(db_file,saved_preprocessor)
+            with st.spinner('Starting training now, please wait....'):
+                training.begin_training()
+            
+        
+        
     elif app_mode == "Inference":
         uploaded_file = st.file_uploader("Choose a file", type=['txt', 'jpg'])
         # if uploaded_file is not None:

@@ -9,7 +9,7 @@ import pandas as pd
 import streamlit as st
 
 
-class Validate:
+class ValidateData:
 
     def __init__(self,logger,path_to_files,schema_path):
         self._logger = logger
@@ -43,7 +43,7 @@ class Validate:
         regex = "['hypothyroid']+['\_'']+[\d_]+[\d]+\.csv"
         pattern,LengthOfDateStampInFile,LengthOfTimeStampInFile,column_names,NumberofColumns = self._load_schema()
         validation_result = {}
-        all_files = [file for file in os.listdir(self._path_to_files)]
+        all_files = [file for file in os.listdir(self._path_to_files) if os.path.isfile(os.path.join(self._path_to_files, file))]
         self._logger.log(f'Validating file names for {len(all_files)} files')
         for file in all_files:
             if (re.match(regex, file)):
@@ -52,6 +52,7 @@ class Validate:
                 if len(splitAtDot[1]) == LengthOfDateStampInFile:
                     if len(splitAtDot[2]) == LengthOfTimeStampInFile:
                         validation_result[file] = 'valid'
+                        self._logger.log(f'Validating file {file} for file name: valid')
                     else:
                         validation_result[file] = 'invalid'
                         self._logger.log(f'Validating file {file} for file name: invalid')
@@ -128,12 +129,3 @@ class Validate:
         path_to_good_files,path_to_bad_files = self._segregate_good_and_bad_data(validation_result)
 
         return validation_result,path_to_good_files,path_to_bad_files
-    # def _transform_data(self):
-    #     # Make data ready to be inserted into database
-
-    # def _save_data_to_database(self):
-    #     # store to db
-        
-    # def _save_data_to_csv(self):
-    #     # store to csv
-    # pass

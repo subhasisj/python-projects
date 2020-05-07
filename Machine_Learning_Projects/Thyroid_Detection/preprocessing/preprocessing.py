@@ -2,7 +2,6 @@ from sklearn.base import TransformerMixin,BaseEstimator
 import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import LabelEncoder
-from imblearn.over_sampling import RandomOverSampler
 import pandas as pd
 
 class Preprocessor(BaseEstimator,TransformerMixin):
@@ -15,6 +14,7 @@ class Preprocessor(BaseEstimator,TransformerMixin):
         return self 
 
     def transform(self,df,y=None):
+        self._logger.log(f'Preprocessor: Started Preprocessing....')
         self._logger.log(f'Preprocessor: Dropping columns: {self._unnecessary_columns_list}')
         df = self._drop_unnecessary_columns(df)
 
@@ -26,6 +26,7 @@ class Preprocessor(BaseEstimator,TransformerMixin):
 
         self._logger.log('Preprocessor: Imputing missing values')
         df = self._impute_missing_values(df)
+        self._logger.log(f'Preprocessor: Preprocessing Completed')
 
         return df
 
@@ -79,7 +80,7 @@ class Preprocessor(BaseEstimator,TransformerMixin):
             try:
                 imputer=KNNImputer(n_neighbors=3, weights='uniform',missing_values=np.nan)
                 new_array=imputer.fit_transform(df)
-                df = pd.DataFrame(data=np.round(self.new_array), columns=self.data.columns)
+                df = pd.DataFrame(data=np.round(new_array), columns=df.columns)
                 self._logger.log('Preprocessor: Imputed Missing Successfully.')
                 return df
             except Exception as e:

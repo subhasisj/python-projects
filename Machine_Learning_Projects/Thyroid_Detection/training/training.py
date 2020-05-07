@@ -1,66 +1,40 @@
 import sys
 sys.path.append('../')
 from logger.logger import Logger
-from validation.validate import Validate
-from preprocessing.preprocessing import Preprocessor
-import streamlit as st
-import os
+from db_operations.sqlite_db import SqliteDbHandler
+from datetime import datetime
 import pandas as pd
-import dask.dataframe as dd
+import streamlit as st
 
 class Training:
-    def __init__(self,training_file_path,schema_path):
-        self._training_file_path = training_file_path
-        self._schema_path = schema_path
-        self._logger = Logger('training_logs.log')
-        self._path_to_good_files = None
-        self._path_to_bad_files = None
-    
-    def _run_validation(self):
-
-        self._logger.log('Starting training files validation')
-        training_files_validation = Validate(self._logger,self._training_file_path,self._schema_path)
-        validation_result,path_to_good_files,path_to_bad_files = training_files_validation.validate_files()
-        self._logger.log('Training Files Validaiton Completed.') #
-        st.info('Validation Results:')
-        st.write(validation_result)
-        st.subheader('Files moved to:')
-
-        self._path_to_good_files = path_to_good_files
-        self._path_to_bad_files = path_to_bad_files
-        st.info(f'Path to Good Files: "{self._path_to_good_files}"')
-        st.info(f'Path to Bad Files: "{self._path_to_bad_files}"')
-
-        return validation_result
-
-    def _preprocess_data(self):
-        all_files = [file for file in os.listdir(self._path_to_good_files)]
-        data_to_clean = dd.read_csv(os.path.join(self._path_to_good_files,'*.csv'))
-        # st.write(data_to_clean.count().compute())
-        unnecessary_columns = ['TSH_measured','T3_measured','TT4_measured','T4U_measured','FTI_measured','TBG_measured','TBG','TSH']
-        st.write(Preprocessor(self._logger,unnecessary_columns).transform(data_to_clean.compute()))
-
-    def start_training(self):
-        
-        # bar = st.progress(0)
-        with st.spinner('Validating files now, please wait.....'):
-        # Validation
-            validation_result = self._run_validation()
-
-        # Read Data from all files in Good Folder and run preprocessing
-        with st.spinner('Preprocessing Data now, please wait....'):
-            self._preprocess_data()
-        # Save data to DB
-
-        # Move files to good/bad folders after validation
+    def __init__(self,training_db_path,preprocessor_path):
+        self._training_db_path = training_db_path
+        self._preprocessor_path = preprocessor_path
+        self._time_created = datetime.now()
+        self._logger = Logger(f'training_logs_{self._time_created.date()}_{self._time_created.strftime("%H%M%S")}.log')
 
 
+    def begin_training(self):
+        self._logger.log('Training: Begin....')
+        self._logger.log(f'Training: Attempting to get training data from {self._training_db_path}.')
+        connection = self._get_data_from_db()
+        st.write(connection)
+        # df = pd.read_sql_query("select * from thyroid_training;", connection)
+        df = pd.read_sql("select * from thyroid_training", connection)
+        self._logger.log('Training data loaded successfully.')
+        st.write(df)
 
 
-        # bar.progress(100)
+    def _get_data_from_db(self):
+        date = self._time_created.date()
+        time = self._time_created.strftime("%H%M%S")
+        db_handler = SqliteDbHandler(self._logger,self._training_db_path,f'training_db_{date}_{time}')
+        connection = db_handler.create_db_connection(self._training_db_path)
+        return connection
 
 
+    def _get_saved_preprocessor(self):
+        pass
 
-
-# train = Training('.\data\Training_Batch_Files','.\data\schema\schema_training.json')
-# train.start_training()
+    def _cluster_data(self):
+        pass

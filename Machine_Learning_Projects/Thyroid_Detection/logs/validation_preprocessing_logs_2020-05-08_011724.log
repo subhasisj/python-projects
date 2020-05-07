@@ -1,0 +1,99 @@
+08-May-20 01:17:24 INFO Starting training files validation
+08-May-20 01:17:24 INFO Validating for file names:
+08-May-20 01:17:24 INFO Loading Schema from .\data\schema\schema_training.json
+08-May-20 01:17:24 INFO Validating file names for 29 files
+08-May-20 01:17:24 INFO Validating file .gitignore for file name: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0102062112000.csv for file name: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_02111.csv for file name: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062.csv for file name: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062111000.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062111998.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062111999.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112000.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112001.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112002.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112003.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112004.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112005.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112006.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112007.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112008.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112009.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112010.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112011.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112012.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112013.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112014.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112015.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112016.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112025.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112042.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112109.csv for file name: valid
+08-May-20 01:17:24 INFO Validating file wafer_0211198_0102062112001.csv for file name: invalid
+08-May-20 01:17:24 INFO Validating file _0211198_0102062112004.csv for file name: invalid
+08-May-20 01:17:24 INFO Validating for Column length:
+08-May-20 01:17:24 INFO Loading Schema from .\data\schema\schema_training.json
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062111000.csv for column length: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112025.csv for column length: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112042.csv for column length: invalid
+08-May-20 01:17:24 INFO Validating file hypothyroid_0211198_0102062112109.csv for column length: invalid
+08-May-20 01:17:24 INFO Validating for Missing Values:
+08-May-20 01:17:24 INFO Loading Schema from .\data\schema\schema_training.json
+08-May-20 01:17:25 INFO File path .\data\Training_Batch_Files\good successfully removed
+08-May-20 01:17:25 INFO File path .\data\Training_Batch_Files\bad successfully removed
+08-May-20 01:17:25 INFO New Path Created .\data\Training_Batch_Files\good
+08-May-20 01:17:25 INFO New Path Created .\data\Training_Batch_Files\bad
+08-May-20 01:17:25 INFO File hypothyroid_0102062112000.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0102062112000.csv to .\data\Training_Batch_Files\bad\hypothyroid_0102062112000.csv
+08-May-20 01:17:25 INFO File hypothyroid_02111.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_02111.csv to .\data\Training_Batch_Files\bad\hypothyroid_02111.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062.csv to .\data\Training_Batch_Files\bad\hypothyroid_0211198_0102062.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062111000.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062111000.csv to .\data\Training_Batch_Files\bad\hypothyroid_0211198_0102062111000.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062111998.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062111998.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062111998.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062111999.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062111999.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062111999.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112000.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112000.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112000.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112001.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112001.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112001.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112002.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112002.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112002.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112003.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112003.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112003.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112004.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112004.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112004.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112005.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112005.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112005.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112006.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112006.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112006.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112007.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112007.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112007.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112008.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112008.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112008.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112009.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112009.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112009.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112010.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112010.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112010.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112011.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112011.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112011.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112012.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112012.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112012.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112013.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112013.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112013.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112014.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112014.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112014.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112015.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112015.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112015.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112016.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112016.csv to .\data\Training_Batch_Files\good\hypothyroid_0211198_0102062112016.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112025.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112025.csv to .\data\Training_Batch_Files\bad\hypothyroid_0211198_0102062112025.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112042.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112042.csv to .\data\Training_Batch_Files\bad\hypothyroid_0211198_0102062112042.csv
+08-May-20 01:17:25 INFO File hypothyroid_0211198_0102062112109.csv successfully moved from .\data\Training_Batch_Files\hypothyroid_0211198_0102062112109.csv to .\data\Training_Batch_Files\bad\hypothyroid_0211198_0102062112109.csv
+08-May-20 01:17:25 INFO File wafer_0211198_0102062112001.csv successfully moved from .\data\Training_Batch_Files\wafer_0211198_0102062112001.csv to .\data\Training_Batch_Files\bad\wafer_0211198_0102062112001.csv
+08-May-20 01:17:25 INFO File _0211198_0102062112004.csv successfully moved from .\data\Training_Batch_Files\_0211198_0102062112004.csv to .\data\Training_Batch_Files\bad\_0211198_0102062112004.csv
+08-May-20 01:17:25 INFO Training Files Validaiton Completed.
+08-May-20 01:17:25 INFO Preprocessor: Started Preprocessing....
+08-May-20 01:17:25 INFO Preprocessor: Dropping columns: ['TSH_measured', 'T3_measured', 'TT4_measured', 'T4U_measured', 'FTI_measured', 'TBG_measured', 'TBG', 'TSH']
+08-May-20 01:17:25 INFO Preprocessor: Replacing "?" with NaN
+08-May-20 01:17:25 INFO Preprocessor: Encoding Categorical columns
+08-May-20 01:17:25 INFO Preprocessor: Imputing missing values
+08-May-20 01:17:25 INFO Preprocessor: missing values found.
+08-May-20 01:17:26 INFO Preprocessor: Imputed Missing Successfully.
+08-May-20 01:17:26 INFO Preprocessor: Preprocessing Completed
+08-May-20 01:17:26 INFO Preprocessor: Preprocessor saved as ./artifacts/preprocessing/preprocessor_2020-05-08_011724.joblib
+08-May-20 01:17:26 INFO Balancing Classes : Processing column Class
+08-May-20 01:17:26 INFO Balancing Classes : Value Counts before sampling for Class: 1.0    3481
+0.0     194
+2.0      95
+3.0       2
+Name: Class, dtype: int64
+08-May-20 01:17:26 INFO Balancing Classes : Value Counts after sampling for Class: 3.0    3481
+2.0    3481
+0.0    3481
+1.0    3481
+Name: Class, dtype: int64
+08-May-20 01:17:26 INFO Requested Path .\data\Training_Batch_Files\training_db already exists!
+08-May-20 01:17:26 INFO DB :Attempting to get database connection to .\data\Training_Batch_Files\training_db\training_db_2020-05-08_011724.db
+08-May-20 01:17:26 INFO DB: Opened Connection to the DB .\data\Training_Batch_Files\training_db\training_db_2020-05-08_011724.db successfully
+08-May-20 01:17:26 INFO DB :Saving table thyroid_training in database training_db_2020-05-08_011724 
+08-May-20 01:17:26 INFO DB :Saving table thyroid_training in database training_db_2020-05-08_011724 completed successfully
