@@ -1,0 +1,6 @@
+11-May-20 23:35:08 INFO Training: Begin....
+11-May-20 23:35:08 INFO Training: Attempting to get training data from .\data\Training_DB\training_db.db.
+11-May-20 23:35:08 INFO DB: Attempting to get database connection to .\data\Training_DB\training_db.db
+11-May-20 23:35:08 INFO DB: Opened Connection to the DB .\data\Training_DB\training_db.db successfully
+11-May-20 23:35:08 INFO Training: data loaded successfully.
+11-May-20 23:35:08 INFO Clustering: Finding number of clusters using Elbow plot

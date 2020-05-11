@@ -7,6 +7,8 @@ from preprocessing.imbalanced_handler import ImbalancedHandler
 from db_operations.sqlite_db import SqliteDbHandler
 from data_reader.data_reader import GlobDataReader,DaskDataReader
 from utilities.utils import FileUtils
+from sqlalchemy.types import Integer
+
 
 import streamlit as st
 from joblib import dump, load
@@ -15,6 +17,8 @@ import pandas as pd
 import dask.dataframe as dd
 import glob
 from datetime import datetime
+from pathlib import Path
+
 
 class ValidationController:
     def __init__(self,training_file_path,schema_path):
@@ -28,8 +32,12 @@ class ValidationController:
     def _run_validation(self):
 
         self._logger.log('Starting training files validation')
-        training_files_validation = ValidateData(self._logger,self._training_file_path,self._schema_path)
-        validation_result,path_to_good_files,path_to_bad_files = training_files_validation.validate_files()
+        try:
+            training_files_validation = ValidateData(self._logger,self._training_file_path,self._schema_path)
+            validation_result,path_to_good_files,path_to_bad_files = training_files_validation.validate_files()
+        except:
+            self._logger.log(f'No Valid Files Found in {self._training_file_path}')
+            raise Exception('No Valid files found')
         self._logger.log('Training Files Validaiton Completed.') #
         st.info('Validation Results:')
         st.write(validation_result)
@@ -59,13 +67,19 @@ class ValidationController:
 
         return cleaned_data
 
+    def _get_parent_folder(self,full_path):
+        return str(Path(full_path).parents[0])  # "path/to"
+
+
     def _save_preprocessed_data(self,data):
         date = self._time_created.date()
         time = self._time_created.strftime("%H%M%S")
         # db_path = os.path.join(self._training_file_path,'training_db')
-        fileutils = FileUtils(self._logger,self._training_file_path) 
-        db_path = fileutils.create('training_db')
-        db = SqliteDbHandler(self._logger,db_path,f'training_db_{date}_{time}')
+
+        fileutils = FileUtils(self._logger,self._get_parent_folder(self._training_file_path)) 
+        db_path = fileutils.create('Training_DB')
+        # db = SqliteDbHandler(self._logger,db_path,f'training_db_{date}_{time}')
+        db = SqliteDbHandler(self._logger,db_path,'training_db')
         db.create_db_connection()
         db.save_table_in_db('thyroid_training',data)
 

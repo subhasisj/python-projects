@@ -1,0 +1,2 @@
+09-May-20 15:18:49 INFO DB: Attempting to get database connection to .\test.db
+09-May-20 15:18:49 INFO DB: Opened Connection to the DB .\test.db successfully

@@ -125,6 +125,9 @@ class ValidateData:
         self._logger.log('Validating for Missing Values:')
         validation_result = self._check_for_columns_with_missing_values(validation_result)
 
+        if 'valid' not in validation_result.values():
+            raise Exception
+
         # Segregate Good and Bad Data
         path_to_good_files,path_to_bad_files = self._segregate_good_and_bad_data(validation_result)
 

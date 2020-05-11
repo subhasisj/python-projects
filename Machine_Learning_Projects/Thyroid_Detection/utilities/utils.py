@@ -19,8 +19,10 @@ class FileUtils:
         self._logger = logger
         self._base_path_for_files = base_path_for_files
 
-    def create(self,sub_directory_to_create):
+    def create(self,sub_directory_to_create,delete_before_creation=None):
         try:
+            if delete_before_creation:
+                self.delete_directory(sub_directory_to_create)
             path = os.path.join(self._base_path_for_files,sub_directory_to_create)
             if not os.path.isdir(path):
                 os.makedirs(path)

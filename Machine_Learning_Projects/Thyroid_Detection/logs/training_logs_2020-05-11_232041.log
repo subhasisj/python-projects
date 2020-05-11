@@ -1,0 +1,73 @@
+11-May-20 23:20:41 INFO Training: Begin....
+11-May-20 23:20:41 INFO Training: Attempting to get training data from .\data\Training_DB\training_db.db.
+11-May-20 23:20:41 INFO DB: Attempting to get database connection to .\data\Training_DB\training_db.db
+11-May-20 23:20:41 INFO DB: Opened Connection to the DB .\data\Training_DB\training_db.db successfully
+11-May-20 23:20:41 INFO Training: data loaded successfully.
+11-May-20 23:20:41 INFO Clustering: Finding number of clusters using Elbow plot
+11-May-20 23:20:49 INFO Clustering: Number of Clusters found: 3
+11-May-20 23:20:49 INFO Training: Found 3 clusters in training data
+11-May-20 23:20:49 INFO Clustering: Initializing Kmeans with 3
+11-May-20 23:20:49 INFO Clustering: Clusters assigned to data successfully
+11-May-20 23:20:49 INFO Training: Starting Process for getting best model for clusters 
+11-May-20 23:20:49 INFO Training: Finding best model for Cluster: 0
+11-May-20 23:20:49 INFO Models: Intiliazing process for finding best model
+11-May-20 23:20:49 INFO Models: fitting Algorithms using Joblib Parallel
+11-May-20 23:21:54 INFO Training: Finding best model for Cluster: 1
+11-May-20 23:21:54 INFO Models: Intiliazing process for finding best model
+11-May-20 23:21:54 INFO Models: fitting Algorithms using Joblib Parallel
+11-May-20 23:22:07 INFO Training: Finding best model for Cluster: 2
+11-May-20 23:22:07 INFO Models: Intiliazing process for finding best model
+11-May-20 23:22:07 INFO Models: fitting Algorithms using Joblib Parallel
+11-May-20 23:22:19 INFO File path .\artifacts\models successfully removed
+11-May-20 23:22:19 INFO New Path Created .\artifacts\models
+11-May-20 23:22:19 INFO New Path Created .\artifacts\models\KNeighborsClassifier0
+11-May-20 23:22:19 INFO Saving Model KNeighborsClassifier0 in .\artifacts\models\KNeighborsClassifier0
+11-May-20 23:22:20 INFO New Path Created .\artifacts\models\RandomForestClassifier1
+11-May-20 23:22:20 INFO Saving Model RandomForestClassifier1 in .\artifacts\models\RandomForestClassifier1
+11-May-20 23:22:20 INFO New Path Created .\artifacts\models\KNeighborsClassifier2
+11-May-20 23:22:20 INFO Saving Model KNeighborsClassifier2 in .\artifacts\models\KNeighborsClassifier2
+11-May-20 23:35:01 DEBUG STREAM b'IHDR' 16 13
+11-May-20 23:35:01 DEBUG STREAM b'pHYs' 41 9
+11-May-20 23:35:01 DEBUG STREAM b'tIME' 62 7
+11-May-20 23:35:01 DEBUG b'tIME' 62 7 (unknown)
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 81 7
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 100 12
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 124 10
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 146 14
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 172 9
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 193 11
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 216 8
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 236 7
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 255 8
+11-May-20 23:35:01 DEBUG STREAM b'tEXt' 275 6
+11-May-20 23:35:01 DEBUG STREAM b'IDAT' 293 8192
+11-May-20 23:35:05 DEBUG STREAM b'IHDR' 16 13
+11-May-20 23:35:05 DEBUG STREAM b'pHYs' 41 9
+11-May-20 23:35:05 DEBUG STREAM b'tIME' 62 7
+11-May-20 23:35:05 DEBUG b'tIME' 62 7 (unknown)
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 81 7
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 100 12
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 124 10
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 146 14
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 172 9
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 193 11
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 216 8
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 236 7
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 255 8
+11-May-20 23:35:05 DEBUG STREAM b'tEXt' 275 6
+11-May-20 23:35:05 DEBUG STREAM b'IDAT' 293 8192
+11-May-20 23:35:08 DEBUG STREAM b'IHDR' 16 13
+11-May-20 23:35:08 DEBUG STREAM b'pHYs' 41 9
+11-May-20 23:35:08 DEBUG STREAM b'tIME' 62 7
+11-May-20 23:35:08 DEBUG b'tIME' 62 7 (unknown)
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 81 7
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 100 12
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 124 10
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 146 14
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 172 9
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 193 11
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 216 8
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 236 7
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 255 8
+11-May-20 23:35:08 DEBUG STREAM b'tEXt' 275 6
+11-May-20 23:35:08 DEBUG STREAM b'IDAT' 293 8192

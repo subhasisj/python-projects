@@ -1,4 +1,0 @@
-08-May-20 01:45:35 INFO Training: Begin....
-08-May-20 01:45:35 INFO Training: Attempting to get training data from .\data\Training_Batch_Files\training_db\training_db_2020-05-08_011724.db.
-08-May-20 01:45:35 INFO DB: Attempting to get database connection to .\data\Training_Batch_Files\training_db\training_db_2020-05-08_011724.db
-08-May-20 01:45:35 INFO DB: Opened Connection to the DB .\data\Training_Batch_Files\training_db\training_db_2020-05-08_011724.db successfully
