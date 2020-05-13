@@ -25,6 +25,8 @@ class Training:
         self._db_handler = SqliteDbHandler(self._logger,self._training_db_path,f'training_db')
         self._cluster_model = None
         self._path_to_artifacts = os.path.join('.','artifacts')
+        fileutils = FileUtils(self._logger,self._path_to_artifacts)
+        self.model_repo_path = fileutils.create('models',delete_before_creation=True)
 
 
     def begin_training(self):
@@ -43,6 +45,11 @@ class Training:
             y = df['Class']
             clusters = self._get_clusters_from_data(X)
             st.info(f'Found {clusters} clusters in training data')
+
+            st.write({
+                'Clustering Model':self._cluster_model.__class__.__name__,
+                'Model Save path':self._cluster_model_save_path
+            })
             self._logger.log(f'Training: Found {clusters} clusters in training data')
             
         with st.spinner('Assigning Clusters to Training Data:'):
@@ -52,11 +59,20 @@ class Training:
                 # df.to_csv('./data/test_pycaret_classification.csv')
         with st.spinner('Getting best model for each cluster'):
             self._logger.log(f'Training: Starting Process for getting best model for clusters ')
+            st.info('Saved Models Overview:')
             st.write(self._train_models_for_clusters(df))
 
 
     def _get_clusters_from_data(self,data):
+
         self._cluster_model = KmeansClustering(self._logger,data)
+
+        model_name = self._cluster_model.__class__.__name__
+        model_utils = FileUtils(self._logger,self.model_repo_path)
+        model_path = model_utils.create(model_name)
+        self._cluster_model_save_path = os.path.join(model_path,f'{model_name}.joblib')
+        dump(self._cluster_model,self._cluster_model_save_path )
+
         return self._cluster_model.find_clusters_using_elbow_plot()
 
     def _assign_clusters_to_data(self,data):
@@ -72,8 +88,8 @@ class Training:
             cluster_models[group_name] = model_trainer.find_best_classifier_for_data()
 
         
-        fileutils = FileUtils(self._logger,self._path_to_artifacts)
-        model_repo_path = fileutils.create('models',delete_before_creation=True)
+        # fileutils = FileUtils(self._logger,self._path_to_artifacts)
+        # model_repo_path = fileutils.create('models',delete_before_creation=True)
         # Save Models as per the cluster 
         # 
         saved_models = [] 
@@ -84,20 +100,23 @@ class Training:
             model = jsonpickle.decode(value)
             model_name = model.__class__.__name__+str(key)
 
-            model_utils = FileUtils(self._logger,model_repo_path)
+            model_utils = FileUtils(self._logger,self.model_repo_path)
             model_path = model_utils.create(model_name)
 
 
             try:
                 model_save_path = os.path.join(model_path,f'{model_name}.joblib')
                 dump(model,model_save_path )
+
                 saved_model.update(Path = model_save_path )
+                saved_model.update(Cluster = key)
                 saved_model.update(model = model.__class__.__name__)
                 saved_models.append(saved_model)
+
                 self._logger.log(f'Saving Model {model_name} in {model_path}')
 
             except Exception as e:
-                self._logger.log(f'Exception occured while saving Model {model_name} in {model_repo_path}: {str(e)}')
+                self._logger.log(f'Exception occured while saving Model {model_name} in {self.model_repo_path}: {str(e)}')
         
         
         return saved_models

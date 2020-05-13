@@ -60,12 +60,25 @@ class ValidationController:
         cleaned_data = preprocessor.transform(df)
         date = self._time_created.date()
         time = self._time_created.strftime("%H%M%S")
-        preprocessor_save_path = f'./artifacts/preprocessing/preprocessor_{date}_{time}.joblib'
-        dump(preprocessor,preprocessor_save_path ) 
-        st.info(f'Preprocessor saved as preprocessor_{date}_{time}.joblib')
-        self._logger.log(f'Preprocessor: Preprocessor saved as {preprocessor_save_path}')
+        self._save_preprocessor(preprocessor)
+        # preprocessor_save_path = f'./artifacts/preprocessing/preprocessor_{date}_{time}.joblib'
+        # dump(preprocessor,preprocessor_save_path ) 
+        # st.info(f'Preprocessor saved as preprocessor_{date}_{time}.joblib')
+        # self._logger.log(f'Preprocessor: Preprocessor saved as {preprocessor_save_path}')
 
         return cleaned_data
+
+    def _save_preprocessor(self,preprocessor):
+        try:
+            self._logger.log(f'Preprocessor: Attempting to save preprocessor') 
+            self._path_to_artifacts = os.path.join('.','artifacts')
+            fileutils = FileUtils(self._logger,self._path_to_artifacts)
+            preprocessor_save_path = os.path.join(fileutils.create('preprocessing',delete_before_creation=True),'preprocessor.joblib')
+            dump(preprocessor,preprocessor_save_path )
+            st.info(f'Preprocessor saved as {preprocessor_save_path}')
+            self._logger.log(f'Preprocessor: Preprocessor saved as {preprocessor_save_path}') 
+        except Exception as e:
+            self._logger.log(f'Preprocessor: Exception occured while saving preprocessor - {str(e)}') 
 
     def _get_parent_folder(self,full_path):
         return str(Path(full_path).parents[0])  # "path/to"

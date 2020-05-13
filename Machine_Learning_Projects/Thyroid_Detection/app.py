@@ -9,12 +9,21 @@ from src.file_selector import file_selector
 from training.training import Training
 from validation.validation_controller import ValidationController
 
+from typing import Dict
+
+
 # import ptvsd
 # print('Waiting for debugger attach')
 # ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
 # ptvsd.wait_for_attach()
 
 # ./data/combined/hypothyroid.csv
+
+@st.cache(allow_output_mutation=True)
+def get_static_store() -> Dict:
+    """This dictionary is initialized once and can be used to store the files uploaded"""
+    return {}
+
 def main():
     st.header('Classification of Hypothyroid')
     st.image('./images/thyroid_1.png',clamp=True,width=500)
@@ -84,11 +93,45 @@ def main():
         
     elif app_mode == "Inference":
         st.subheader('Inference')
-        uploaded_file = st.file_uploader("Choose a file", type=['txt', 'jpg'])
+        # static_store = get_static_store()
 
-        preprocessor_path = os.path.join('.','artifacts','preprocessing')
-        saved_preprocessor = file_selector(folder_path=preprocessor_path,text = 'Select the saved Preprocessor')
-        st.write(f'You selected `%s`' %saved_preprocessor)
+        # uploaded_file = st.file_uploader("Choose a file", type=['csv'])
+
+        # if uploaded_file:
+        #     # Process you file here
+        #     value = uploaded_file.getvalue()
+
+        #     # And add it to the static_store if not already in
+        #     if not value in static_store.values():
+        #         static_store[uploaded_file] = value
+        # else:
+        #     static_store.clear()  # Hack to clear list if the user clears the cache and reloads the page
+        #     st.info("Upload one or more `.csv` files.")
+
+        # if st.button("Clear file list"):
+        #     static_store.clear()
+        # if st.checkbox("Show file list?", True):
+        #     st.write(list(static_store.keys()))
+        # if st.checkbox("Show content of files?"):
+        #     for value in static_store.values():
+        #         st.code(value)
+
+        schema_folder_path = os.path.join('.','data','schema')
+        inferece_schema_path = file_selector(folder_path=schema_folder_path,text = 'Select the Inference file schema')
+        st.write(f'You selected `%s`' %inferece_schema_path)
+        if st.checkbox('Show Schema'):
+            st.write(json.loads(open(inferece_schema_path).read()))
+
+        data_path = os.path.join('.','data')
+        inference_file_path = file_selector(folder_path = data_path,text = 'Select the path for Prediction files')
+        st.write('You selected `%s`' % inference_file_path)
+        if st.checkbox('Show Files'):
+            st.info('Files for Prediction:')
+            st.write([file for file in os.listdir(inference_file_path) if os.path.isfile(os.path.join(inference_file_path, file))])
+
+        # preprocessor_path = os.path.join('.','artifacts','preprocessing')
+        # saved_preprocessor = file_selector(folder_path=preprocessor_path,text = 'Select the saved Preprocessor')
+        # st.write(f'You selected `%s`' %saved_preprocessor)
         # if uploaded_file is not None:
             # do stuff
         # readme_text.empty()
