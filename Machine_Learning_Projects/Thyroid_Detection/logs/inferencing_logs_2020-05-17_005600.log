@@ -1,0 +1,5 @@
+17-May-20 00:56:00 INFO Inference: Started Inferencing
+17-May-20 00:56:00 INFO Inference: Loading data for Inferencing
+17-May-20 00:56:00 INFO DB: Attempting to get database connection to .\data\inferencing_DB\inferencing_db.db
+17-May-20 00:56:00 INFO DB: Opened Connection to the DB .\data\inferencing_DB\inferencing_db.db successfully
+17-May-20 00:56:00 INFO Model Loader: Loading model KMeans from path .\artifacts\models\KMeans\KMeans.joblib

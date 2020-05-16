@@ -35,9 +35,9 @@ class KmeansClustering:
 
         self._logger.log(f'Clustering: Initializing Kmeans with {self.n_clusters}')
         try:
-            self.kmeans = KMeans(n_clusters=self.n_clusters, init='k-means++', random_state=42)
+            self.cluster_model = KMeans(n_clusters=self.n_clusters, init='k-means++', random_state=42)
             #self.data = self.data[~self.data.isin([np.nan, np.inf, -np.inf]).any(1)]
-            y_kmeans=self.kmeans.fit_predict(data) #  divide data into clusters
+            y_kmeans=self.cluster_model.fit_predict(data) #  divide data into clusters
 
             # self.save_model = self.file_op.save_model(self.kmeans, 'KMeans') # saving the KMeans model to directory
 

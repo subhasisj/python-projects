@@ -3,6 +3,7 @@ sys.path.append('../')
 from logger.logger import Logger
 import os
 import shutil
+from joblib import load
 
 # createDirectoryForGoodBadRawData
 # deleteExistingBadDataTrainingFolder
@@ -59,6 +60,28 @@ class FileUtils:
         except:
             self._logger.log(f'File path {path} removal unsuccessful','critical')
 
+
+class ModelUtils:
+    def __init__(self,logger):
+        self._logger = logger
+        self.path = os.path.join('.','artifacts','models')
+
+    def load_model(self,model_name):
+        try:
+            model_path = os.path.join(self.path,model_name,f'{model_name}.joblib')
+            self._logger.log(f'Model Loader: Loading model {model_name} from path {model_path}')
+            return load(model_path)
+        except Exception as e:
+            self._logger.log(f'Model Loader: Unable to load model {model_name} from path {model_path}, Exception : {str(e)}')
+
+    def get_all_models_info(self):
+        
+        models = []
+        for _ ,_ ,file in os.walk(self.path):
+            if len(file) != 0:
+                models.append(file)
+
+        return models
 
 
 
