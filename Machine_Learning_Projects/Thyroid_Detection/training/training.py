@@ -89,7 +89,7 @@ class Training:
         # Loop at each Cluster and find best model/HP combination
         for group_name, df_group in data.groupby('Cluster'):
             self._logger.log(f'Training: Finding best model for Cluster: {group_name}')
-            model_trainer = Train_Models(self._logger,df_group)
+            model_trainer = Train_Models(self._logger,df_group.drop('Cluster',axis=1))
             cluster_models[group_name] = model_trainer.find_best_classifier_for_data()
 
         

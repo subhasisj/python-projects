@@ -4,6 +4,8 @@ from logger.logger import Logger
 import os
 import shutil
 from joblib import load
+import more_itertools
+import re
 
 # createDirectoryForGoodBadRawData
 # deleteExistingBadDataTrainingFolder
@@ -81,7 +83,19 @@ class ModelUtils:
             if len(file) != 0:
                 models.append(file)
 
-        return models
+        return list(more_itertools.flatten(models))
+
+    def find_model_for_cluster(self,cluster_id):
+        # https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
+        all_models = self.get_all_models_info()
+        r = re.compile(f".*{cluster_id}.joblib")
+        selected_model_name = list(filter(r.match, all_models))[0] 
+        selected_model_name_without_extension = selected_model_name.split('.')[0]
+        return self.load_model(selected_model_name_without_extension)
+
+
+
+
 
 
 

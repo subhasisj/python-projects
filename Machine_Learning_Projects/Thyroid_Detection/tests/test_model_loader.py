@@ -4,6 +4,7 @@ from utilities.utils import ModelUtils
 import unittest
 import os
 import more_itertools
+import re
 
 class DummyLogger:
     def __init__(self):
@@ -34,11 +35,18 @@ class TestModelUtils(unittest.TestCase):
 
     def test_get_one_model_name(self):
         all_models = self.model_utils.get_all_models_info()
-        all_models = list(more_itertools.flatten(all_models))
+        # all_models = list(more_itertools.flatten(all_models))
         model_0_name_with_extension = all_models[0]
         model_name_only = model_0_name_with_extension.split('.')[0]
         
         self.assertEqual(model_name_only,self.actual_models[0])
+
+    def test_model_for_cluster(self):
+
+        mylist = ["dog", "cat", "wildcat", "thundercat", "cow", "hooo"]
+        r = re.compile(".*cat")
+        newlist = list(filter(r.match, mylist)) # Read Note
+        print(newlist)
 
 
 if __name__ == '__main__':

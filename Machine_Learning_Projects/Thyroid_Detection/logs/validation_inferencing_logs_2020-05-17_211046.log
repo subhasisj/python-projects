@@ -1,0 +1,120 @@
+17-May-20 21:10:46 INFO Starting files validation
+17-May-20 21:10:46 INFO Validating for file names:
+17-May-20 21:10:46 INFO Loading Schema from .\data\schema\schema_prediction.json
+17-May-20 21:10:46 INFO Validating file names for 10 files
+17-May-20 21:10:46 INFO Validating file .gitignore for file name: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0102062112000.csv for file name: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_02111.csv for file name: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062.csv for file name: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112025.csv for file name: valid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112042.csv for file name: valid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112097.csv for file name: valid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112109.csv for file name: valid
+17-May-20 21:10:46 INFO Validating file wafer_0211198_0102062112001.csv for file name: invalid
+17-May-20 21:10:46 INFO Validating file _0211198_0102062112004.csv for file name: invalid
+17-May-20 21:10:46 INFO Validating for Column length:
+17-May-20 21:10:46 INFO Loading Schema from .\data\schema\schema_prediction.json
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112025.csv for column length: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112042.csv for column length: invalid
+17-May-20 21:10:46 INFO Validating file hypothyroid_0211198_0102062112109.csv for column length: invalid
+17-May-20 21:10:46 INFO Validating for Missing Values:
+17-May-20 21:10:46 INFO Loading Schema from .\data\schema\schema_prediction.json
+17-May-20 21:10:46 INFO File path .\data\Prediction_Batch_Files\good successfully removed
+17-May-20 21:10:46 INFO File path .\data\Prediction_Batch_Files\bad successfully removed
+17-May-20 21:10:46 INFO New Path Created .\data\Prediction_Batch_Files\good
+17-May-20 21:10:46 INFO New Path Created .\data\Prediction_Batch_Files\bad
+17-May-20 21:10:46 INFO File hypothyroid_0102062112000.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0102062112000.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_0102062112000.csv
+17-May-20 21:10:46 INFO File hypothyroid_02111.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_02111.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_02111.csv
+17-May-20 21:10:46 INFO File hypothyroid_0211198_0102062.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0211198_0102062.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_0211198_0102062.csv
+17-May-20 21:10:46 INFO File hypothyroid_0211198_0102062112025.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0211198_0102062112025.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_0211198_0102062112025.csv
+17-May-20 21:10:46 INFO File hypothyroid_0211198_0102062112042.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0211198_0102062112042.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_0211198_0102062112042.csv
+17-May-20 21:10:46 INFO File hypothyroid_0211198_0102062112097.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0211198_0102062112097.csv to .\data\Prediction_Batch_Files\good\hypothyroid_0211198_0102062112097.csv
+17-May-20 21:10:46 INFO File hypothyroid_0211198_0102062112109.csv successfully moved from .\data\Prediction_Batch_Files\hypothyroid_0211198_0102062112109.csv to .\data\Prediction_Batch_Files\bad\hypothyroid_0211198_0102062112109.csv
+17-May-20 21:10:46 INFO File wafer_0211198_0102062112001.csv successfully moved from .\data\Prediction_Batch_Files\wafer_0211198_0102062112001.csv to .\data\Prediction_Batch_Files\bad\wafer_0211198_0102062112001.csv
+17-May-20 21:10:46 INFO File _0211198_0102062112004.csv successfully moved from .\data\Prediction_Batch_Files\_0211198_0102062112004.csv to .\data\Prediction_Batch_Files\bad\_0211198_0102062112004.csv
+17-May-20 21:10:46 INFO Files Validaiton Completed.
+17-May-20 21:10:46 INFO Preprocessor: Started Preprocessing....
+17-May-20 21:10:46 INFO Preprocessor: Dropping columns: ['TSH_measured', 'T3_measured', 'TT4_measured', 'T4U_measured', 'FTI_measured', 'TBG_measured', 'TBG', 'TSH']
+17-May-20 21:10:46 INFO Preprocessor: Columns before = Index(['age', 'sex', 'on_thyroxine', 'query_on_thyroxine',
+       'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery',
+       'I131_treatment', 'query_hypothyroid', 'query_hyperthyroid', 'lithium',
+       'goitre', 'tumor', 'hypopituitary', 'psych', 'TSH_measured', 'TSH',
+       'T3_measured', 'T3', 'TT4_measured', 'TT4', 'T4U_measured', 'T4U',
+       'FTI_measured', 'FTI', 'TBG_measured', 'TBG', 'referral_source'],
+      dtype='object')
+17-May-20 21:10:46 INFO Preprocessor: Columns after = Index(['age', 'sex', 'on_thyroxine', 'query_on_thyroxine',
+       'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery',
+       'I131_treatment', 'query_hypothyroid', 'query_hyperthyroid', 'lithium',
+       'goitre', 'tumor', 'hypopituitary', 'psych', 'T3', 'TT4', 'T4U', 'FTI',
+       'referral_source'],
+      dtype='object')
+17-May-20 21:10:46 INFO Preprocessor: Replacing "?" with NaN
+17-May-20 21:10:46 INFO Preprocessor: Encoding Categorical columns
+17-May-20 21:10:46 INFO Preprocessor: Columns while encoding categoricals = Index(['age', 'sex', 'on_thyroxine', 'query_on_thyroxine',
+       'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery',
+       'I131_treatment', 'query_hypothyroid', 'query_hyperthyroid', 'lithium',
+       'goitre', 'tumor', 'hypopituitary', 'psych', 'T3', 'TT4', 'T4U', 'FTI',
+       'referral_source'],
+      dtype='object')
+17-May-20 21:10:46 INFO Preprocessor: Imputing missing values
+17-May-20 21:10:46 INFO Preprocessor: Attempting to Impute Missing values, if any.
+17-May-20 21:10:46 INFO Preprocessor: missing values found.
+17-May-20 21:10:46 INFO Preprocessor:age                           0
+sex                          13
+on_thyroxine                  0
+query_on_thyroxine            0
+on_antithyroid_medication     0
+sick                          0
+pregnant                      0
+thyroid_surgery               0
+I131_treatment                0
+query_hypothyroid             0
+query_hyperthyroid            0
+lithium                       0
+goitre                        0
+tumor                         0
+hypopituitary                 0
+psych                         0
+T3                           56
+TT4                          15
+T4U                          23
+FTI                          23
+referral_source_STMW          0
+referral_source_SVHC          0
+referral_source_SVHD          0
+referral_source_SVI           0
+referral_source_other         0
+dtype: int64
+17-May-20 21:10:46 INFO Preprocessor: After Imputing  age                          0
+sex                          0
+on_thyroxine                 0
+query_on_thyroxine           0
+on_antithyroid_medication    0
+sick                         0
+pregnant                     0
+thyroid_surgery              0
+I131_treatment               0
+query_hypothyroid            0
+query_hyperthyroid           0
+lithium                      0
+goitre                       0
+tumor                        0
+hypopituitary                0
+psych                        0
+T3                           0
+TT4                          0
+T4U                          0
+FTI                          0
+referral_source_STMW         0
+referral_source_SVHC         0
+referral_source_SVHD         0
+referral_source_SVI          0
+referral_source_other        0
+dtype: int64
+17-May-20 21:10:46 INFO Preprocessor: Imputed Missing Successfully.
+17-May-20 21:10:46 INFO Preprocessor: Preprocessing Completed
+17-May-20 21:10:46 INFO Requested Path data\inferencing_DB already exists!
+17-May-20 21:10:46 INFO DB: Attempting to get database connection to data\inferencing_DB\inferencing_db.db
+17-May-20 21:10:46 INFO DB: Opened Connection to the DB data\inferencing_DB\inferencing_db.db successfully
+17-May-20 21:10:46 INFO DB :Saving table thyroid_inferencing in database inferencing_db 
+17-May-20 21:10:46 INFO DB :Saving table thyroid_inferencing in database inferencing_db completed successfully
