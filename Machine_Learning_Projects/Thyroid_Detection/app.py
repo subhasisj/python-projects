@@ -7,7 +7,8 @@ import streamlit as st
 from src.exploration import explore_data
 from src.file_selector import file_selector
 from training.training import Training
-from validation.validation_controller import ValidationController
+from inference.inference_controller import Inference_Controller
+from validation.validation_controller import ValidationController_training,ValidationController_inference
 
 from typing import Dict
 
@@ -63,7 +64,7 @@ def main():
 
         if st.button('Start Validation'):
             try:
-                validation_controller = ValidationController(training_file_path,training_schema_path)
+                validation_controller = ValidationController_training(training_file_path,training_schema_path)
                 validation_controller.start_validation()
             except Exception as e:
                 st.warning(str(e))
@@ -78,7 +79,7 @@ def main():
         
         Please select the base folder that contains the Schema for Training Files DB in order to continue.
         ''')
-
+        breakpoint()
         db_folder_path = os.path.join('.','data','Training_DB')
         db_file = file_selector(folder_path=db_folder_path,text = 'Select the Training DB')
         st.write(f'You selected `%s`' %db_file)
@@ -128,6 +129,23 @@ def main():
         if st.checkbox('Show Files'):
             st.info('Files for Prediction:')
             st.write([file for file in os.listdir(inference_file_path) if os.path.isfile(os.path.join(inference_file_path, file))])
+        
+        if st.button('Predict'):
+            try:
+                # Validate and preprocessing of data
+                validation_controller = ValidationController_inference(inference_file_path,inferece_schema_path)
+                validation_controller.start_validation()
+
+                db_folder_path = os.path.join('.','data','inferencing_DB')
+                inferencing = Inference_Controller(db_folder_path,validation_controller.get_preprocessor())
+                inferencing.run_inferencing()
+
+                # Load Cluster Algorithm
+
+                # Load 
+                
+            except Exception as e:
+                st.warning(str(e))
 
         # preprocessor_path = os.path.join('.','artifacts','preprocessing')
         # saved_preprocessor = file_selector(folder_path=preprocessor_path,text = 'Select the saved Preprocessor')

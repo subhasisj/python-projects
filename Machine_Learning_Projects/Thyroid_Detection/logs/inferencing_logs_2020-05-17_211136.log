@@ -1,0 +1,8 @@
+17-May-20 21:11:36 INFO Inference: Started Inferencing
+17-May-20 21:11:36 INFO Inference: Loading data for Inferencing
+17-May-20 21:11:36 INFO DB: Attempting to get database connection to .\data\inferencing_DB\inferencing_db.db
+17-May-20 21:11:36 INFO DB: Opened Connection to the DB .\data\inferencing_DB\inferencing_db.db successfully
+17-May-20 21:11:36 INFO Model Loader: Loading model KMeans from path .\artifacts\models\KMeans\KMeans.joblib
+17-May-20 21:11:36 INFO Model Loader: Loading model RandomForestClassifier2 from path .\artifacts\models\RandomForestClassifier2\RandomForestClassifier2.joblib
+17-May-20 21:11:36 INFO Model Loader: Loading model KNeighborsClassifier0 from path .\artifacts\models\KNeighborsClassifier0\KNeighborsClassifier0.joblib
+17-May-20 21:11:36 INFO Model Loader: Loading model KNeighborsClassifier1 from path .\artifacts\models\KNeighborsClassifier1\KNeighborsClassifier1.joblib

@@ -3,6 +3,9 @@ sys.path.append('../')
 from logger.logger import Logger
 import os
 import shutil
+from joblib import load
+import more_itertools
+import re
 
 # createDirectoryForGoodBadRawData
 # deleteExistingBadDataTrainingFolder
@@ -58,6 +61,40 @@ class FileUtils:
                 self._logger.log(f'Requested Path {path} does not exist!','warning')
         except:
             self._logger.log(f'File path {path} removal unsuccessful','critical')
+
+
+class ModelUtils:
+    def __init__(self,logger):
+        self._logger = logger
+        self.path = os.path.join('.','artifacts','models')
+
+    def load_model(self,model_name):
+        try:
+            model_path = os.path.join(self.path,model_name,f'{model_name}.joblib')
+            self._logger.log(f'Model Loader: Loading model {model_name} from path {model_path}')
+            return load(model_path)
+        except Exception as e:
+            self._logger.log(f'Model Loader: Unable to load model {model_name} from path {model_path}, Exception : {str(e)}')
+
+    def get_all_models_info(self):
+        
+        models = []
+        for _ ,_ ,file in os.walk(self.path):
+            if len(file) != 0:
+                models.append(file)
+
+        return list(more_itertools.flatten(models))
+
+    def find_model_for_cluster(self,cluster_id):
+        # https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
+        all_models = self.get_all_models_info()
+        r = re.compile(f".*{cluster_id}.joblib")
+        selected_model_name = list(filter(r.match, all_models))[0] 
+        selected_model_name_without_extension = selected_model_name.split('.')[0]
+        return self.load_model(selected_model_name_without_extension)
+
+
+
 
 
 

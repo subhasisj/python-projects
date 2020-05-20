@@ -1,0 +1,23 @@
+17-May-20 21:10:46 INFO Inference: Started Inferencing
+17-May-20 21:10:46 INFO Inference: Loading data for Inferencing
+17-May-20 21:10:46 INFO DB: Attempting to get database connection to .\data\inferencing_DB\inferencing_db.db
+17-May-20 21:10:46 INFO DB: Opened Connection to the DB .\data\inferencing_DB\inferencing_db.db successfully
+17-May-20 21:10:46 INFO Model Loader: Loading model KMeans from path .\artifacts\models\KMeans\KMeans.joblib
+17-May-20 21:10:46 INFO Model Loader: Loading model RandomForestClassifier2 from path .\artifacts\models\RandomForestClassifier2\RandomForestClassifier2.joblib
+17-May-20 21:10:46 INFO Model Loader: Loading model KNeighborsClassifier0 from path .\artifacts\models\KNeighborsClassifier0\KNeighborsClassifier0.joblib
+17-May-20 21:10:46 INFO Model Loader: Loading model KNeighborsClassifier1 from path .\artifacts\models\KNeighborsClassifier1\KNeighborsClassifier1.joblib
+17-May-20 21:11:09 DEBUG STREAM b'IHDR' 16 13
+17-May-20 21:11:09 DEBUG STREAM b'pHYs' 41 9
+17-May-20 21:11:09 DEBUG STREAM b'tIME' 62 7
+17-May-20 21:11:09 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 81 7
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 100 12
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 124 10
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 146 14
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 172 9
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 193 11
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 216 8
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 236 7
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 255 8
+17-May-20 21:11:09 DEBUG STREAM b'tEXt' 275 6
+17-May-20 21:11:09 DEBUG STREAM b'IDAT' 293 8192
