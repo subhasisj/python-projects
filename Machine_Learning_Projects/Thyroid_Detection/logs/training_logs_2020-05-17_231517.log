@@ -1,0 +1,119 @@
+17-May-20 23:15:17 INFO File path .\artifacts\models successfully removed
+17-May-20 23:15:17 INFO New Path Created .\artifacts\models
+17-May-20 23:15:17 INFO Training: Begin....
+17-May-20 23:15:17 INFO Training: Attempting to get training data from .\data\Training_DB\training_db.db.
+17-May-20 23:15:17 INFO DB: Attempting to get database connection to .\data\Training_DB\training_db.db
+17-May-20 23:15:17 INFO DB: Opened Connection to the DB .\data\Training_DB\training_db.db successfully
+17-May-20 23:15:18 INFO Training: data loaded successfully.
+17-May-20 23:15:18 INFO Clustering: Finding number of clusters using Elbow plot
+17-May-20 23:15:26 INFO Clustering: Number of Clusters found: 3
+17-May-20 23:15:26 INFO Training: Found 3 clusters in training data
+17-May-20 23:15:26 INFO Clustering: Initializing Kmeans with 3
+17-May-20 23:15:26 INFO Clustering: Clusters assigned to data successfully
+17-May-20 23:15:26 INFO New Path Created .\artifacts\models\KMeans
+17-May-20 23:15:26 INFO Training: Starting Process for getting best model for clusters 
+17-May-20 23:15:27 INFO Training: Finding best model for Cluster: 0
+17-May-20 23:15:27 INFO Models: Intiliazing process for finding best model
+17-May-20 23:15:27 INFO Models: fitting Algorithms using Joblib Parallel
+17-May-20 23:15:44 INFO Training: Finding best model for Cluster: 1
+17-May-20 23:15:44 INFO Models: Intiliazing process for finding best model
+17-May-20 23:15:44 INFO Models: fitting Algorithms using Joblib Parallel
+17-May-20 23:15:59 INFO Training: Finding best model for Cluster: 2
+17-May-20 23:15:59 INFO Models: Intiliazing process for finding best model
+17-May-20 23:15:59 INFO Models: fitting Algorithms using Joblib Parallel
+17-May-20 23:16:21 INFO New Path Created .\artifacts\models\KNeighborsClassifier0
+17-May-20 23:16:21 INFO Saving Model KNeighborsClassifier0 in .\artifacts\models\KNeighborsClassifier0
+17-May-20 23:16:21 INFO New Path Created .\artifacts\models\KNeighborsClassifier1
+17-May-20 23:16:21 INFO Saving Model KNeighborsClassifier1 in .\artifacts\models\KNeighborsClassifier1
+17-May-20 23:16:21 INFO New Path Created .\artifacts\models\KNeighborsClassifier2
+17-May-20 23:16:22 INFO Saving Model KNeighborsClassifier2 in .\artifacts\models\KNeighborsClassifier2
+17-May-20 23:17:52 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:17:52 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:17:52 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:17:52 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:17:52 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:17:52 DEBUG STREAM b'IDAT' 293 8192
+17-May-20 23:17:59 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:17:59 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:17:59 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:17:59 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:17:59 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:17:59 DEBUG STREAM b'IDAT' 293 8192
+17-May-20 23:18:01 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:18:01 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:18:01 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:18:01 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:18:01 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:18:01 DEBUG STREAM b'IDAT' 293 8192
+17-May-20 23:18:14 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:18:14 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:18:14 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:18:14 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:18:14 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:18:14 DEBUG STREAM b'IDAT' 293 8192
+17-May-20 23:18:17 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:18:17 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:18:17 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:18:17 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:18:17 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:18:17 DEBUG STREAM b'IDAT' 293 8192
+17-May-20 23:18:22 DEBUG STREAM b'IHDR' 16 13
+17-May-20 23:18:22 DEBUG STREAM b'pHYs' 41 9
+17-May-20 23:18:22 DEBUG STREAM b'tIME' 62 7
+17-May-20 23:18:22 DEBUG b'tIME' 62 7 (unknown)
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 81 7
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 100 12
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 124 10
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 146 14
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 172 9
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 193 11
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 216 8
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 236 7
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 255 8
+17-May-20 23:18:22 DEBUG STREAM b'tEXt' 275 6
+17-May-20 23:18:22 DEBUG STREAM b'IDAT' 293 8192

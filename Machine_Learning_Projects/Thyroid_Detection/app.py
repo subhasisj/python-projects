@@ -79,7 +79,6 @@ def main():
         
         Please select the base folder that contains the Schema for Training Files DB in order to continue.
         ''')
-        breakpoint()
         db_folder_path = os.path.join('.','data','Training_DB')
         db_file = file_selector(folder_path=db_folder_path,text = 'Select the Training DB')
         st.write(f'You selected `%s`' %db_file)
