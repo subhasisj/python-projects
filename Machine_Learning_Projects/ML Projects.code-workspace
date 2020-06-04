@@ -7,9 +7,6 @@
 			"path": "Thyroid_Detection"
 		},
 		{
-			"path": "..\\..\\..\\SAP DI\\Customer Use Cases\\UBP"
-		},
-		{
 			"path": "NLP\\Text_classification_Glove_LSTM"
 		}
 	],
