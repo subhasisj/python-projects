@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "NLP\\Text_classification_Glove_LSTM"
+		},
+		{
+			"path": "NLP\\Sentiment_Classification_with_BERT"
 		}
 	],
 	"settings": {}

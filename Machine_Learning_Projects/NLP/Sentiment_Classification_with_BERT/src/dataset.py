@@ -1,7 +1,7 @@
-import config
+from src import config 
 import torch
 
-class SentimentDataset(Dataset):
+class SentimentDataset:
 
     def __init__(self,review,target):
 
@@ -17,6 +17,9 @@ class SentimentDataset(Dataset):
 
         review = str(self.review[item])
         review = " ".join(review.split())
+        target = self.target[item]
+        # print('-'*20)
+        # print(target)
 
         inputs = self.tokenizer.encode_plus(
             review,
@@ -25,19 +28,19 @@ class SentimentDataset(Dataset):
             return_token_type_ids = False,
             pad_to_max_length = True,
             return_attention_mask = True,
-            return_tensors = 'pt'
+            # return_tensors = 'pt'
         )
 
 
         ids = inputs['input_ids']
         mask = inputs['attention_mask']
-        token_type_ids = inputs['token_type_ids']
+        # token_type_ids = inputs['token_type_ids']
 
         return {
             "ids": torch.tensor(ids,dtype = torch.long),
-            "mask": torch.tensor(mask,dtype = torch.long),
-            "token_type_ids": torch.tensor(token_type_ids,dtype = torch.long),
-            "target": torch.tensor(self.target[item],dtype = torch.long),
+            "attention_mask": torch.tensor(mask,dtype = torch.long),
+            # "token_type_ids": torch.tensor(token_type_ids,dtype = torch.long),
+            "targets": torch.tensor(target,dtype = torch.float)
             
         }
 
