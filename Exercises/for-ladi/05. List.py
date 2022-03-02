@@ -70,7 +70,7 @@ print(f"Natural number upto 10: {natural_number_upto_10}")
 print(f"Natural number upto 10 (Before): {natural_number_upto_10}")
 temp_list = list(natural_number_upto_10)
 temp_list[0] = "201"
-print(f"Temp list: {temp_list}")
+print(f"Temp list using list() : {temp_list}")
 print(f"Natural number upto 10: {natural_number_upto_10}")
 
 temp_list = list(
@@ -80,22 +80,66 @@ print(f"Temp list: {temp_list}")
 temp_list = list("467")
 print(f"Temp list: {temp_list}")
 
-#Keep a dictionary in a list
-temp_list = [
-    {
-        "name": "Srishti Jethy",
-        "age": 17,
-        "address": "Kathmandu",
-    }
-]
+# Keep a dictionary in a list
+temp_list = [{"name": "Srishti Jethy", "age": 17, "address": "Kathmandu",}]
 
 print(f"Temp list: {temp_list}")
 # print only age information
-print(f"Temp list: {temp_list[0]['age']}") # Dictionary["key"]
+print(f"Temp list: {temp_list[0]['age']}")  # Dictionary["key"]
 
 # index function
 print(f"Natural number upto 10: {natural_number_upto_10}")
 index_of_variable = natural_number_upto_10.index("M")
 print(f"Index of M: {index_of_variable}")
-index_of_variable = natural_number_upto_10.index(100)
-print(f"Index of 100: {index_of_variable}")
+print(f"Natural number upto 10: {natural_number_upto_10}")
+# index_of_variable = natural_number_upto_10.index(100)
+# print(f"Index of 100: {index_of_variable}")
+
+## POP
+popped_element = natural_number_upto_10.pop()  # Remove last element and return it
+print(f"Popped element: {popped_element}")
+
+natural_number_upto_10.append("M")
+# Count
+print(f"Count of M: {natural_number_upto_10.count('M')}")
+## Remove
+print(f"Natural number upto 10: {natural_number_upto_10}")
+check_element = natural_number_upto_10.remove("M")
+print(f"Check element: {check_element}")  # Remove does not return anything
+print(f"Natural number upto 10: {natural_number_upto_10}")
+
+# reverse
+print(f"Natural number upto 10: {natural_number_upto_10}")
+natural_number_upto_10.reverse()
+print(f"Natural number upto 10: {natural_number_upto_10}")
+
+# sort
+natural_number_upto_10 = [i for i in range(10, 0, -1)]
+print(f"Natural number upto 10: {natural_number_upto_10}")
+natural_number_upto_10.sort()
+print(f"Natural number upto 10: {natural_number_upto_10}")
+
+# sort string element List
+natural_number_upto_10 = ["M", "L", "A", "D", "I", "O", "N", "T", "Y"]
+print(f"Natural number upto 10: {natural_number_upto_10}")
+natural_number_upto_10.sort()  # sort in place
+print(f"Natural number upto 10: {natural_number_upto_10}")
+
+# sorted
+natural_number_upto_10 = ["M", "L", "A", "D", "I", "O", "N", "T", "Y"]
+print(f"Natural number upto 10: {natural_number_upto_10}")
+natural_number_upto_10 = sorted(natural_number_upto_10)  # Sorted returns a new list
+print(f"Natural number upto 10: {natural_number_upto_10}")
+
+# Min,Max,Sum
+natural_number_upto_10 = [i for i in range(10, 0, -1)]  # [10,9,8,7,6,5,4,3,2,1]
+print(f"Natural number upto 10: {natural_number_upto_10}")
+print(f"Min: {min(natural_number_upto_10)}")
+print(f"Max: {max(natural_number_upto_10)}")
+print(f"Sum: {sum(natural_number_upto_10)}")
+# Min,Max,Sum with string elements in list
+natural_number_upto_10 = ["M", "L", "A", "D", "I", "O", "N", "T", "Y"]
+print(f"Natural number upto 10: {natural_number_upto_10}")
+print(f"Min: {min(natural_number_upto_10)}")
+print(f"Max: {max(natural_number_upto_10)}")
+# print(f"Sum: {sum(natural_number_upto_10)}") # Will not work throw error
