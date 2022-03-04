@@ -143,3 +143,51 @@ print(f"Natural number upto 10: {natural_number_upto_10}")
 print(f"Min: {min(natural_number_upto_10)}")
 print(f"Max: {max(natural_number_upto_10)}")
 # print(f"Sum: {sum(natural_number_upto_10)}") # Will not work throw error
+
+# Nested list
+nested_list = [
+    0,
+    [1, 2, 3], 
+    [4, 5],
+    [7, 8, 9,10,11],
+    32,
+    31
+]
+
+print(f"Access the element [1,2,3]: {nested_list[1]}")
+print(f"Access the element 2 from [1,2,3]: {nested_list[1][1]}")
+print(f"Access last element: {nested_list[-1]}")
+print(f"Access last element of [7, 8, 9,10,11]: {nested_list[3][-1]}")
+
+# 2D List
+two_d_list = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12],
+    [13, 14, 15],
+]
+
+print(f"Length of 2D list: {len(two_d_list)}") # The number of rows
+print(f"Length of Columns of 2D list: {len(two_d_list[0])}") # The number of columns
+
+# Create a 2D list using for loop
+two_d_list = []
+for i in range(0, 5): # 5 rows
+    rows = []
+    for j in range(0, 3): # 3 columns
+        rows.append(i*j)
+    two_d_list.append(rows)
+
+print(f"2D list: {two_d_list}")
+
+# Print each elememnt of two_d_list
+for i in range(0, 5): # 5 rows
+    for j in range(0, 3): # 3 columns
+        print(f"{two_d_list[i][j]}", end=" ")
+    print()
+
+
+# Change element at 4,2
+two_d_list[4][2] = "M"
+print(f"2D list: {two_d_list}")
